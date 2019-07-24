@@ -3,7 +3,9 @@ using ExemploTDD.Domain.Commands;
 
 namespace ExemploTDD.Domain
 {
-    public class BoletimHandler : ICommandHandler<CalculaMediaAlunoCommand>
+    public class BoletimHandler : 
+        ICommandHandler<CalculaMediaAlunoCommand>,
+        ICommandHandler<AddAvaliacaoCommand>
     {
         private readonly IAvaliacaoRepository _notaRepository;
 
@@ -16,6 +18,12 @@ namespace ExemploTDD.Domain
         {
             var notas = _notaRepository.ObterAvaliacoesPorAluno(command.IdAluno);
             return notas.Average(x => x.Nota);
+        }
+
+        public object Handle(AddAvaliacaoCommand command)
+        {
+            var avaliacao = new Avaliacao(command.IdAluno, command.Nota);
+            return _notaRepository.Add(avaliacao);
         }
     }
 }
