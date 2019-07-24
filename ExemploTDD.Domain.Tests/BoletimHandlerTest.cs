@@ -5,12 +5,12 @@ using Xunit;
 
 namespace ExemploTDD.Domain.Tests
 {
-    public class BoletimServiceTest
+    public class BoletimHandlerTest
     {
         private readonly IAvaliacaoRepository _notaRepository = null;
         private readonly AvaliacaoDataGenerator _avaliacaoDataGenerator = null;
 
-        public BoletimServiceTest()
+        public BoletimHandlerTest()
         {
             _notaRepository = Substitute.For<IAvaliacaoRepository>();
             _avaliacaoDataGenerator = new AvaliacaoDataGenerator();

@@ -74,7 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoletimServiceTest.cs" />
+    <Compile Include="BoletimHandlerTest.cs" />
     <Compile Include="DataGenerator\AvaliacaoDataGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
